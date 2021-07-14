@@ -1,0 +1,21 @@
+mixin bullet-list (options)
+  - 
+    const { 
+      title = '',
+      list = [
+        "Нельзя с питомцами",
+        "Без вечеринок и мероприятий",
+        "Время прибытия — после 13:00,</br>а выезд до 12:00",
+      ],
+      isRoomDetails = false, 
+    } = options;
+
+    const classModifier = isRoomDetails? 'bullet-list__title_room-details':'' 
+  
+  section.bullet-list 
+    div(class=`bullet-list__title ${classModifier}`)=title
+    div.bullet-list__items
+      -for(let item of list)
+        div.bullet-list__item!=item
+
+

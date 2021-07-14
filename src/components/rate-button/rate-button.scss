@@ -1,0 +1,64 @@
+.rating {
+  width: 7.5rem;
+  height: 1.5rem;
+  display: flex;
+  position: relative;
+  $size: 1.5rem;
+
+  &__input {
+    cursor: pointer;
+    z-index: 2;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    opacity: 0;
+
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        margin-left: 1.5rem * (5 - $i);
+      }
+    }
+
+    & + .rating__image-of-star::before {
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      background: url("./images/star_border.svg") no-repeat 1px 1px;
+
+      font-family: Material Icons;
+      font-size: 1.5rem;
+      line-height: 1.25rem;
+    }
+
+    &:checked ~ .rating__image-of-star::after {
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      background: url("./images/star.svg") no-repeat 1px 1px;
+      font-family: Material Icons;
+      font-size: 1.5rem;
+      line-height: 1.25rem;
+    }
+
+  }
+
+  &__image-of-star {
+    z-index: 1;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        margin-left: 1.5rem * (5 - $i);
+      }
+    }
+    
+  }
+
+}

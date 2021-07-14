@@ -1,0 +1,31 @@
+include ../price-and-number/price-and-number.pug
+include ../rate-button/rate-button.pug
+
+mixin slide(options = {})
+  -
+    const {
+      img = ['./img/left-big.png',
+        './img/photo/image-2.png',
+        './img/photo/image-3.png',
+        './img/photo/image-4.png'],
+      number = '888',
+      pay = '9 990₽',
+      rating = { 
+        blockNumber : 0,
+        checkedStarIndex : 0,
+      },
+      review = '145',
+    } = options;
+
+  div.slick
+    div.slick__slide
+      -for(let i=0;i<img.length;i++)
+        div.slick__slide-item
+          img(class='slick__slide-img' src=img[i], alt="")
+          
+    div.slick__slide-footer
+      div.slick__slide-footer-text
+        +price-and-number({number,pay,isFont:true})
+      div.slick__slide-footer-rating
+        +rate-button(rating)
+        a(href='room-details.html').slick__slide-footer-review=review

@@ -1,0 +1,32 @@
+.cards {
+  max-width: 1440px;
+  padding: 152px 140px 140px 140px;
+  display: flex;
+  background: #E5E5E5;
+  &__left-colum {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__left-colum-item{
+    margin-bottom: 41px;
+  }
+
+  &__centre-colum {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  &__centre-colum-item {
+    margin-bottom: 38px;
+  }
+
+  &__right-colum-item {
+    margin-bottom: 73px;
+    &:nth-child(2){
+      margin-bottom: 41px;
+    }
+  }
+  
+}
+

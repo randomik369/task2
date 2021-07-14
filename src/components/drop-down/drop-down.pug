@@ -1,0 +1,32 @@
+mixin drop-down(options={})
+  - 
+    const {
+      isOpen  = false,
+      title = 'drop-down',
+      list = [
+        "взрослые",
+        "дети",
+        "младенцы",
+      ], 
+    } = options;
+    
+    const classModifier = isOpen ? 'drop-down__items_show' : ''
+
+  section.drop-down.js-drop-down
+    div.drop-down__title=title 
+    div.drop-down__header
+      button.drop-down__title-button.js-drop-down__title-button Сколько гостей
+
+    div(class=`drop-down__items  js-drop-down__items ${classModifier}`)
+      -for(let item of list )
+        div.drop-down__item
+          div.drop-down__item-title=item
+          div.drop-down__item-buttons 
+            button.drop-down__item-buttons-increment.js-drop-down__item-buttons-increment#increment -
+            div.drop-down__item-buttons-count.js-drop-down__item-buttons-count 0
+            button.drop-down__item-buttons-decrement#decrement +
+            
+      div.drop-down__item
+        div.drop-down__item-buttons-control 
+            button.drop-down__item-buttons-control-clean.js-drop-down__item-buttons-control-clean очистить
+            button.drop-down__item-buttons-control-ok.js-drop-down__item-buttons-control-ok применить

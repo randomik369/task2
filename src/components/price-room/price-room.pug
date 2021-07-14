@@ -1,0 +1,42 @@
+mixin price-room()
+  section.price-room
+    div.price-room__header 
+      include ../price-and-number/price-and-number.pug
+      +price-and-number({number:'888',pay:'9 990₽'})
+
+    div.price-room__item
+      include ../calendar/calendar.pug
+      +calendar({titleFrom:'прибытие', titleTo:'выезд', isDouble:true})
+
+    div.price-room__item
+      include ../drop-down/drop-down.pug
+      +drop-down({
+        title : 'гости',
+        list : [
+          "взрослые",
+          "дети",
+          "младенцы",
+        ], 
+      })
+
+    div.price-room__item
+      span.price-room__text 9 990₽ х 4 суток 
+      span.price-room__text 39 960₽ 
+
+    div.price-room__item
+      span.price-room__text Сбор за услуги: скидка 2 179₽ 
+      span.price-room__text 0₽ 
+
+    div.price-room__item
+      span.price-room__text Сбор за дополнительные </br> услуги
+      span.price-room__text 300₽ 
+
+    div.price-room__item
+      span.price-room__text-total Итого 
+      span.price-room__text-total 38 081₽ 
+      
+    div.price-room__item
+      include ../buttons/buttons.pug
+      +buttons({modifier:['form'],text:'забронировать'}) 
+
+

@@ -1,0 +1,268 @@
+include ../../../components/head/head.pug
+include ../../../components/calendar/calendar.pug
+include ../../../components/drop-down/drop-down.pug
+include ../../../components/range-slider/range-slider.pug
+include ../../../components/checkbox-list/checkbox-list.pug
+include ../../../components/rich-checkbox-button/rich-checkbox-button.pug
+include ../../../components/drop-down-bed/drop-down-bed.pug
+include ../../../components/slide/slide.pug
+include ../../../components/pagination/pagination.pug
+
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport' content="initial-scale=1.0, width=device-width")
+    title Toxin Hotel
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png")
+    link(rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5")
+    link(rel="stylesheet" href="./style.css")
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
+  body
+    +head()
+    section.search-room
+      div.search-room__row
+        div.search-room__row-left
+          div.search-room__row-left-item            
+            +calendar({title:'ДАТЫ ПРЕБЫВАНИЯ В ОТЕЛЕ',isRange:true})
+          
+          div.search-room__row-left-item            
+            +drop-down({
+              title : 'гости',
+              list : [
+                "взрослые",
+                "дети",
+                "младенцы",
+              ], 
+            })
+
+          div.search-room__row-left-item          
+            +range-slider('диапазон цены')
+          
+          div.search-room__row-left-item            
+            +checkbox-list({
+              isList:false,
+              title:'правила дома',
+              items : [
+                {text:'Можно курить',flag:false},
+                {text:'Можно с питомцами',flag:true},
+                {text:'Можно пригласить гостей</br> (до 10 человек)',flag:true},
+              ]})
+          
+          div.search-room__row-left-item            
+            +rich-checkbox-button({title:'доступность'})
+          
+          div.search-room__row-left-item
+            +drop-down-bed({title : 'удобства номера'})
+          
+          div.search-room__row-left-item            
+            +checkbox-list({
+              title:'дополнительные удобства',
+              items : [
+                {text:'Завтрак',flag:false},
+                {text:'Письменный стол',flag:false},
+                {text:'Стул для кормления',flag:true},
+                {text:'Кроватка',flag:true},
+                {text:'Телевизор',flag:false},
+                {text:'Шампунь',flag:false},
+              ]})
+        
+        div.search-room__row-right
+          div.search-room__row-right-title Номера, которые мы для вас подобрали
+          div.search-room__row-right-items
+            div.search-room__row-right-item              
+              +slide({
+                img : ['./img/left-big.png',
+                './img/photo/image-2.png',
+                './img/photo/image-3.png',
+                './img/photo/image-4.png'],
+                number : '888',
+                pay : '9 990₽',
+                rating : { 
+                  blockNumber : 1,
+                  checkedStarIndex :5,
+                },
+                review : '145',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img : ['./img/photo/image-3.png',
+                './img/photo/image-4.png',
+                './img/photo/image-5.png',
+                './img/photo/image-6.png'],
+                number :'840',
+                pay : '9 990₽',
+                rating : {
+                  blockNumber : 2,
+                  checkedStarIndex : 4,
+                },
+                review : '65'
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img :['./img/photo/image-7.png',
+                './img/photo/image-8.png',
+                './img/photo/image-9.png',
+                './img/photo/image-10.png'],
+                number :'980',
+                pay : '8 500₽',
+                rating : {
+                  blockNumber : 3,
+                  checkedStarIndex : 3,
+                },
+                review : '35'
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img :['./img/photo/image-11.png',
+                './img/photo/image-12.png',
+                './img/left-big.png',
+                './img/photo/image-2.png'],
+                number :'856',
+                pay : '7 300₽',
+                rating : {
+                  blockNumber : 4,
+                  checkedStarIndex : 5,
+                },
+                review : '19',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img :['img/photo/image-3.png',
+                './img/photo/image-4.png',
+                './img/photo/image-5.png',
+                './img/photo/image-6.png'],
+                number :'740',
+                pay : '6 000₽',
+                rating : {
+                  blockNumber : 5,
+                  checkedStarIndex : 4,
+                }, 
+                review : '44',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img :['./img/photo/image-7.png',
+                './img/photo/image-8.png',
+                './img/photo/image-9.png',
+                './img/photo/image-10.png'],
+                number :'982',
+                pay : '5 800₽',
+                blockNumber : 5,
+                rating : {
+                  blockNumber : 6,
+                  checkedStarIndex : 3,
+                },  
+                review : '56',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img : ['./img/photo/image-11.png',
+                './img/photo/image-12.png',
+                './img/left-big.png',
+                './img/photo/image-2.png'],
+                number :'672',
+                pay : '5 500₽',
+                blockNumber : 5,
+                rating : {
+                  blockNumber : 7,
+                  checkedStarIndex : 5,
+                },  
+                review : '45',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img :['./img/photo/image-3.png',
+                './img/photo/image-4.png',
+                './img/photo/image-5.png',
+                './img/photo/image-6.png'],
+                number :'450',
+                pay : '5 300₽',
+                blockNumber : 4,
+                rating : {
+                  blockNumber : 8,
+                  checkedStarIndex : 4,
+                },  
+                review : '39',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img : ['./img/photo/image-7.png',
+                './img/photo/image-8.png',
+                './img/photo/image-9.png',
+                './img/photo/image-10.png'],
+                number :'350',
+                pay : '5 000₽',
+                blockNumber : 3,
+                rating : {
+                  blockNumber : 9,
+                  checkedStarIndex : 3,
+                },  
+                review : '77',
+              })
+
+            div.search-room__row-right-item              
+              +slide({
+                img : ['./img/photo/image-7.png',
+                './img/photo/image-8.png',
+                './img/photo/image-9.png',
+                './img/photo/image-10.png'],
+                number :'666',
+                pay : '5 000₽',
+                blockNumber : 5,
+                rating : {
+                  blockNumber : 10,
+                  checkedStarIndex : 5,
+                },
+                review : '25',
+              })
+
+            div.search-room__row-right-item  
+              +slide({
+                img : ['./img/photo/image-7.png',
+                './img/photo/image-8.png',
+                './img/photo/image-9.png',
+                './img/photo/image-10.png'],
+                number :'444',
+                pay : '5 000₽',
+                blockNumber : 3,
+                rating : {
+                  blockNumber : 11,
+                  checkedStarIndex : 4,
+                }, 
+                review : '15',
+              })
+            
+            div.search-room__row-right-item              
+              +slide({
+                img : ['./img/photo/image-7.png',
+                './img/photo/image-8.png',
+                './img/photo/image-9.png',
+                './img/photo/image-10.png'],
+                number :'352',
+                pay : '5 000₽',
+                rating : {
+                  blockNumber : 12,
+                  checkedStarIndex : 3,
+                }, 
+                review : '55',
+              })
+          
+          div.search-room__row-right-pagination            
+            +pagination()
+
+      include ../../../components/footer/footer.pug
+
+      script(src = "index.js")

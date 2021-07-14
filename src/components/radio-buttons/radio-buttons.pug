@@ -1,0 +1,17 @@
+mixin radio-buttons(options = {})
+  -
+    const {
+      title = '',
+      list = [
+        {text:'Мужчина',isChecked:true},
+        {text:'Женщина',isChecked:false},
+      ]
+    }=options
+
+  section.radio-buttons
+    div.radio-buttons__title=title
+    div.radio-buttons__items
+      -for(let {text,isChecked} of list)
+        label.radio-buttons__radio
+          input(type="radio" name='gender' class='radio-buttons__radio-input' checked=isChecked)
+          span.radio-buttons__radio-name=text

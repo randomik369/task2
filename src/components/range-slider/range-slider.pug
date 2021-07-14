@@ -1,0 +1,6 @@
+mixin range-slider(label, text)
+  .range-slider.js-range-slider
+    div.range-slider__item
+      label.range-slider__label(for="amount")= label
+      input.range-slider__input(type="text" disabled id="amount" readonly)
+    .js-slider-range

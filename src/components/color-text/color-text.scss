@@ -1,0 +1,39 @@
+.color-text {
+  display: flex;
+  margin-bottom: 51px;
+
+  &_size-24 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &_size-19 {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 25px;
+  }
+  
+  &_size-12 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+  }
+
+  &_size-14 {
+    font-size: 14px;
+    line-height: 21.9px
+  }
+
+  &__title {
+    color: rgba(31, 32, 65, 0.25);
+    font-weight: 400;
+    margin-right: 30px;
+    min-width: 37px;
+    justify-content: flex-end;
+    text-align: end
+  }
+  
+}
+

@@ -1,0 +1,31 @@
+mixin drop-down-bed(options = {})
+  - 
+    const {
+      isOpen = fasle, 
+      title = '',
+      subTitle = '',
+      list = [
+       {text : 'спальни' , count: 0},
+       {text : 'кровати' , count: 0},
+       {text : 'ванные комнаты' , count: 0},
+      ], 
+    } = options;
+    
+    const classModifier = isOpen ? 'drop-down-bed__body_show' : '';
+
+  section.drop-down-bed.js-drop-down-bed
+    div.drop-down-bed__titles
+      div.drop-down-bed__title=title
+      div.drop-down-bed__sub-title=subTitle
+
+    div.drop-down-bed__header
+      button.drop-down-bed__title-button.js-drop-down-bed__title-button Сколько комнат
+      
+    div(class=`drop-down-bed__items js-drop-down-bed__items ${classModifier}`)
+      -for(let {text,count} of list)
+        div.drop-down-bed__item
+          div.drop-down-bed__item-title=text
+          div.drop-down-bed__item-buttons 
+            button(class='drop-down-bed__item-buttons-increment js-drop-down-bed__item-buttons-increment ')#increment -
+            div.drop-down-bed__item-buttons-count.js-drop-down-bed__item-buttons-count=count
+            button.drop-down-bed__item-buttons-decrement#decrement +

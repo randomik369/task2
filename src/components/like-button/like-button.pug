@@ -1,0 +1,11 @@
+mixin like-button(options)
+  -
+    const {
+      likeCount = 0,
+      isClick = false,
+    } = options;
+    
+    const classModification = isClick ? 'like-button_pressed' : ''
+
+  button(class=`like-button js-like-button ${classModification}`)
+    div.like-button__count.js-like-button__count=likeCount

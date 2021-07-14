@@ -1,0 +1,48 @@
+.form-email{
+  position: relative;
+  width: 267px;
+}
+
+.input-form {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  padding: 9px 0 9px 14px;
+  font-size: 13.5px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  width: 100%;
+
+  &::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &:active,&:focus,&:hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+  }
+
+  &__email-button{
+    width: 44px;
+    height: 44px;
+    background: url('./img/arrow-forward.svg')no-repeat 50%;
+    position: absolute;
+    z-index: 3;
+    right: 0px;
+    cursor: pointer;
+  }
+
+  &_width-260{
+    max-width: 260px;
+  } 
+
+  &_email{
+    width: 100%;
+  }
+
+  &_active{
+    border: 1px solid rgba(31, 32, 65, 0.5);
+  }
+
+}
+

@@ -1,0 +1,26 @@
+mixin calendar(options = {})
+  -
+    const {
+      isDouble = false,
+      isRange = false,
+      title = '',
+      titleFrom = 'date drop down',
+      titleTo = 'date drop down',
+    } = options;
+    
+    const classDouble = isDouble ? ' js-calendar_double':'';
+    const classRange = isRange ? ' js-calendar_range':'';
+
+  section(class=`calendar js-calendar${classDouble}${classRange}`)
+    div.calendar__wrapper
+      if(isDouble)
+        div.calendar__items
+          div.calendar__item
+            div.calendar__title=titleFrom
+            input(class="calendar__input js-calendar__input"  type="text" name="date_from" placeholder="ДД.ММ.ГГГГ" readonly=true)
+          div.calendar__item
+            div.calendar__title=titleTo
+            input(class="calendar__input js-calendar__input"  type="text" name="date_from" placeholder="ДД.ММ.ГГГГ" readonly=true)
+      else
+        div.calendar__title=title
+        input(class="calendar__input js-calendar__input"  type="text" name="date_from" placeholder="ДД.ММ.ГГГГ" readonly=true)

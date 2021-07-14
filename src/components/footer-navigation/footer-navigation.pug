@@ -1,0 +1,14 @@
+mixin footer-navigation (options = {}) 
+  -
+    const {
+      title = 'навигация',
+      list = [{text:'О нас',href:'https://www.error.com/'}],     
+    } = options;
+
+  section.footer-navigation
+    div.footer-navigation__title=title 
+    ul.footer-navigation__item
+      -for(let {text,href} of list)
+        li.footer-navigation__list
+          a(href=href)!=text
+

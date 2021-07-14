@@ -1,0 +1,12 @@
+mixin price-and-number(options = {})
+  -
+    const  {
+      number= '',
+      pay= '',
+      isFont= false,
+    } = options;
+    const classModification = isFont ? 'price-and-number__number_font-size-19':'' 
+
+  div.price-and-number
+    div(class=`price-and-number__number ${classModification}`)=number
+    div.price-and-number__pay=pay

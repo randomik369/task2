@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/montserrat-v14-cyrillic-ext_cyrillic_latin-300.woff2") format("woff2"),
+    url("./fonts/Montserrat/montserrat-v14-cyrillic-ext_cyrillic_latin-300.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/montserrat-v14-cyrillic-ext_cyrillic_latin-regular.woff2") format("woff2"),
+    url("./fonts/Montserrat/montserrat-v14-cyrillic-ext_cyrillic_latin-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/montserrat-v14-cyrillic-ext_cyrillic_latin-700.woff2") format("woff2"),
+    url("./fonts/Montserrat/montserrat-v14-cyrillic-ext_cyrillic_latin-700.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("./fonts/quicksand/quicksandlight.woff2") format("woff2"),
+    url("./fonts/quicksand/quicksandlight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("./fonts/quicksand/quicksandlightitalic.woff2") format("woff2"),
+    url("./fonts/quicksand/quicksandlightitalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("./fonts/quicksand/quicksandregular.woff2") format("woff2"),
+    url("./fonts/quicksand/quicksandregular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("./fonts/quicksand/quicksanditalic.woff2") format("woff2"),
+    url("./fonts/quicksand/quicksanditalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Quicksand";
+  src:url("./fonts/quicksand/quicksandbold.woff2") format("woff2"),
+   url("./fonts/quicksand/quicksandbold.woff") format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("./fonts/quicksand/quicksandbolditalic.woff2") format("woff2"),
+    url("./fonts/quicksand/quicksandbolditalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}

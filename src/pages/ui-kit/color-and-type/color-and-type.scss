@@ -1,0 +1,25 @@
+.colors-and-type {
+  margin: 145px 158px 145px 150px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1132px;
+
+  &::before {
+    content: "";
+    width: 48px;
+    height: 48px;
+    background: url("./../../img/main-logo.svg") no-repeat;
+    position: absolute;
+    top: -117px;
+    left: -121px;
+  }
+
+  @media (max-width: 1036px) {
+    justify-content: center;
+    margin: 85px 58px 45px 50px;
+  }
+  
+}
+

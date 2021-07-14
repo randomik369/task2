@@ -1,0 +1,412 @@
+.calendar {
+  font-size: 12px;
+
+  &__wraper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1f2041;
+    margin-bottom: 3px;
+  }
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    &:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+
+  &__input {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    padding: 8px 0 10px 13px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    background: url('./img/arrow-down.svg')93% 57% no-repeat;
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.25);
+      font-size: 14px;
+      line-height: 18px;
+    }
+    
+    &:active,
+    &:focus,
+    &:hover {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 16.875px 18.75px 0px 18.75px;
+  }
+
+  &__clear-button {
+    cursor: pointer;
+    display: none;
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    text-transform: uppercase;
+    color: rgba(188, 156, 255, 1);
+    max-width: 10rem;
+    word-break: break-all;
+
+    &:hover,
+    &:focus {
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+
+  &__apply-button {
+    cursor: pointer;
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    text-transform: uppercase;
+    color: rgba(188, 156, 255, 1);
+    max-width: 10rem;
+    word-break: break-all;
+
+    &:hover,
+    &:focus {
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+}
+
+//------------------------------------------
+// стили чтобы подогнать календарь под макет
+
+.datepicker {
+  width: max-content;
+  padding-bottom: 1.25rem;
+  background: white;
+  border: 0.0625rem solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0rem 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
+  border-radius: 0.25rem;
+  
+
+  &--pointer {
+    display: none;
+  }
+
+  & * {
+    font-family: Montserrat, Arial, sans-serif !important;
+  }
+
+  &.active {
+    @media screen and (max-width: 20rem) {
+      border: 0rem;
+    }
+  }
+  &.-bottom-left-,
+  &.-bottom-left-.active {
+    margin-left: -0.125rem;
+
+    @media screen and (max-width: 342px) {
+      margin-left: -0.7rem
+    }
+  }
+  &.active {
+    width: max-content;
+  }
+
+  &--cells {
+    width: 17.5rem;
+  }
+
+  &--cell {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    color: rgba(31, 32, 65, 0.05) 0;
+
+    &-day {
+      &.-focus- {
+        border-radius: 50%;
+        background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+      }
+
+      &.-selected- {
+        position: relative;
+        background: linear-gradient(to bottom, rgb(188, 156, 255), rgb(139, 164, 249));
+        border-radius: 50%;
+
+        &.-focus- {
+          background: linear-gradient(to bottom, rgb(188, 156, 255), rgb(139, 164, 249));
+        }
+      }
+
+      &.-in-range- {
+        &.-focus- {
+          border-radius: 0%;
+          background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+        }
+      }
+
+      &.-current- {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, rgb(111, 207, 151) 0%, rgb(102, 210, 234) 100%);
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 0.75rem;
+        line-height: 0.9375rem;
+        text-align: center;
+        color: white;
+
+        &.-focus- {
+          color: white;
+        }
+
+        &.-in-range- {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          position: relative;
+          background: linear-gradient(to bottom, rgb(188, 156, 255), rgb(139, 164, 249));
+          border-radius: 50%;
+          border: 0rem;
+          font-weight: bold;
+          font-size: 0.75rem;
+          line-height: 0.9375rem;
+          color: white;
+
+          &::after {
+            content: "";
+            z-index: -1;
+            width: 50%;
+            height: inherit;
+            position: absolute;
+            margin-left: 50%;
+            background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+          }
+        }
+
+        &.-range-to- {
+          &::after {
+            background: transparent;
+          }
+        }
+      }
+
+      &.-in-range-.-other-month-,
+      &.-in-range-.-other-month-.-focus- {
+        background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+        color: rgba(31, 32, 65, 0.25);
+      }
+
+      &.-range-from-,
+      &.-range-to-,
+      &.-range-from-.-current-,
+      &.-range-to-.-current-,
+      &.-range-from-.-other-month-,
+      &.-range-to-.-other-month-,
+      &.-range-from-.-other-month-.-selected-.-focus-,
+      &.-range-to-.-other-month-.-selected-.-focus- {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        background: linear-gradient(to bottom, rgb(188, 156, 255), rgb(139, 164, 249));
+        border-radius: 50%;
+        border: 0rem;
+        font-weight: bold;
+        font-size: 0.75rem;
+        line-height: 0.9375rem;
+        color: white;
+      }
+
+      &.-range-from-::after {
+        content: "";
+        z-index: -1;
+        width: 50%;
+        height: inherit;
+        position: absolute;
+        margin-left: 50%;
+        background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+      }
+
+      &.-range-to-::after {
+        content: "";
+        z-index: -1;
+        width: 50%;
+        height: inherit;
+        position: absolute;
+        margin-right: 50%;
+        background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+      }
+
+      &.-range-from-.-disabled-::after,
+      &.-range-to-.-disabled-::after {
+        background: transparent;
+      }
+
+      &.-in-range- {
+        background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+        color: rgba(31, 32, 65, 0.05) 0;
+      }
+
+      &.-disabled-,
+      &.-disabled-.-focus- {
+        font-style: normal;
+        font-weight: normal;
+        color: rgba(31, 32, 65, 0.25);
+        background: transparent;
+      }
+
+      &.-range-from-,
+      &.-in-range- {
+        &.-other-month-,
+        &.-other-month-.-focus-,
+        &.-focus- {
+          &.-disabled- {
+            color: rgba(31, 32, 65, 0.25);
+            background: transparent;
+          }
+        }
+        &.-disabled- {
+          color: rgba(31, 32, 65, 0.25);
+          background: transparent;
+        }
+      }
+    }
+
+    &-month,
+    &-year {
+      width: 4.375rem;
+      height: 4.375rem;
+
+      &.-focus- {
+        border-radius: 50%;
+        background: linear-gradient(to bottom, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
+      }
+
+      &.-current- {
+        background: linear-gradient(180deg, rgb(111, 207, 151) 0%, rgb(102, 210, 234) 100%);
+        color: white;
+        border-radius: 50%;
+
+        &.-focus- {
+          color: white;
+        }
+      }
+
+      &.-selected-,
+      &.-selected-.-current- {
+        background: linear-gradient(to bottom, rgb(188, 156, 255), rgb(139, 164, 249));
+        color: white;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &--content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  &--nav {
+    padding: 0.9375rem 1rem 0.9375rem 1rem;
+    border: 0rem solid transparent;
+
+    &-title {
+      font-family: Quicksand, OpenSans, Arial, sans-serif;
+      font-weight: bold;
+      font-size: 1.1875rem;
+      line-height: 1.5rem;
+      text-align: center;
+      color: rgba(31, 32, 65, 1);
+    }
+
+    &-action {
+      position: relative;
+
+      & > svg {
+        opacity: 0;
+      }
+
+      &:first-child::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        font-family: Material Icons;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        border: 0rem solid transparent;
+        background: #fff url(./images/arrow-back.svg) no-repeat 0px 0px;
+      }
+
+      &:last-child::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        font-family: Material Icons;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        border: 0rem solid transparent;
+        background: #fff url(./img/arrow-forward.svg) no-repeat 0px 0px;
+      }
+    }
+  }
+
+  &--days-names {
+    width: 17.5rem;
+    margin: 0.3125rem 0 0rem;
+  }
+
+  &--day-name {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    color: rgba(188, 156, 255, 1);
+    text-transform: none;
+  }
+
+  &--months {
+    height: max-content;
+
+    & > .datepicker--cells-months {
+      height: max-content;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &--years {
+    height: max-content;
+
+    & > .datepicker--cells-years {
+      height: max-content;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+}
+// стили чтобы подогнать календарь под макет
+//-------------------------------------------

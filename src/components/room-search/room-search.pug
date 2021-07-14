@@ -1,0 +1,25 @@
+mixin room-search(title)
+  section.room-search
+    div.room-search__title=title 
+    div.room-search__item 
+      include ../calendar/calendar.pug
+      +calendar({isDouble:true, titleFrom:'прибытие', titleTo:'выезд',})
+
+    div.room-search__item 
+      include ../drop-down/drop-down.pug
+      +drop-down({
+        title : 'гости',
+        list : [
+          "взрослые",
+          "дети",
+          "младенцы",
+        ], 
+      })
+      
+    div.room-search__item 
+      include ../buttons/buttons.pug
+      +buttons({
+        modifier:['form'],
+        text:'подобрать номер',
+        href:'search-room.html'
+      })

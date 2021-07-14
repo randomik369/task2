@@ -1,0 +1,39 @@
+.bullet-list {
+  font-size: 12px;
+
+  &__title {
+    font-weight: bold;
+    margin-left: 1px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  &__title_room-details {
+    text-transform: none;
+    font-size: 19px;
+    margin-left: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    font-size: 14px;
+    padding-left: 21px;
+    color: rgba(31, 32, 65, 0.75);
+    position: relative;
+    margin-bottom: 13px;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: rgba(31, 32, 65, 0.25);
+      position: absolute;
+      border-radius: 50%;
+      left: 0px;
+      top: 4px;
+    }
+    
+  }
+
+}

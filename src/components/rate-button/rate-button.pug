@@ -1,0 +1,17 @@
+mixin rate-button(options = {})
+  - 
+    const {
+      blockNumber = 0,
+      checkedStarIndex = 0,
+    } = options;
+
+  div(class=["rating"])
+    - for(let i = 5; i >= 1; i -= 1) {
+      input(type="radio"
+        class=["rating__input"]
+        name=`rating-${blockNumber}`
+        value=i
+        checked=(checkedStarIndex === i))
+      p(class=["rating__image-of-star"]
+        title=`Оценка «${i}»`)
+    - }

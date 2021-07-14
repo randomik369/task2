@@ -1,0 +1,15 @@
+mixin color-box(options={})
+  -
+    const {
+      colorName = '',
+      colorCode = '#1F2041',
+      backgroundColor = '',
+    } = options;
+
+    const classModifier = `color-box__color_${backgroundColor}`;
+  
+  section.color-box 
+    div(class=`color-box__color ${classModifier}`)  
+    div.color-box__text 
+      div.color-box__text-title=colorName
+      div.color-box__text-sub-title=colorCode

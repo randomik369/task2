@@ -1,0 +1,88 @@
+//@import "../buttons/buttons.scss";
+.head {
+  max-width: 100%;
+  background-color: #fff;
+
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 141px 14px 140px;
+    max-width: 1440px;
+    margin: 0px auto;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+  }
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 0px;
+  }
+
+  &__nav-list-item-link {
+    color: rgba(31, 32, 65, 0.5);
+  }
+  &__nav-list-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  
+  &__nav-list-item-name {
+    vertical-align: center;
+    padding-left: 22px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 30px;
+      background: rgba(31, 32, 65, 0.1);
+      position: absolute;
+      left: 2px;
+      top: -5px;
+    }
+  }
+  
+  &__nav-list-item-link_bold {
+    font-weight: bold;
+    color: rgba(31, 32, 65, 0.75);
+  }
+
+  &__nav-list-item_down-button {
+    width: 21px;
+    height: 11px;
+    background: url("./img/headDown.svg") no-repeat 3px 3px;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 1176px) {
+    &__item{
+      padding: 14px 20px 14px 20px;
+    }
+  }
+  
+  @media (max-width: 962px) {
+    &__item {
+      background: #fff url("");
+    }
+
+    &__list {
+      justify-content: center;
+    }
+
+    &__nav-list-item {
+      margin-bottom: 10px;
+    }
+    
+  }
+}

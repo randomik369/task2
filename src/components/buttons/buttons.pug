@@ -1,0 +1,13 @@
+mixin buttons(options = {})
+  -
+    const {
+      text = 'CLICK ME',
+      href = 'https://www.error.com/',
+      modifier=[], 
+    } = options;
+    
+    const classModifier = modifier.map(item=>` button__link_${item}`);
+
+  section.button
+    a(class=['button__link'].concat(classModifier) href=href)=text 
+

@@ -1,0 +1,102 @@
+include ../../../components/head/head.pug
+include ../../../components/text-list/text-list.pug
+include ../../../components/commentary/commentary.pug
+include ../../../components/bullet-list/bullet-list.pug
+include ../../../components/price-room/price-room.pug
+
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport' content="initial-scale=1.0, width=device-width")
+    title Toxin Hotel
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png")
+    link(rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5")
+    link(rel="stylesheet" href="./style.css")
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
+  body
+    +head()
+    
+    div.room-details
+      div.room-details__images
+        div.room-details__images-left
+          img(src="./img/left-big.png" alt="")
+        div.room-details__images-right
+          img(src="./images/right-top.png" alt="" class='room-details__images-right-top')
+          img(src="./images/right-bottom.png" alt="" class='room-details__images-right-bottom')
+      
+      div.room-details__description
+        div.room-details__description-left
+          div.room-details__description-status
+            div.room-details__description-status-left
+              div.room-details__description-left-title.room-details_title Сведения о номере
+              +comfortList({
+                list : [
+                {imgName:'smile', title:'Комфорт', subTitle:'Шумопоглощающие стены'},
+                {imgName:'city', title:'Удобство', subTitle:'Окно в каждой из спален'},
+                {imgName:'comfort', title:'Уют', subTitle:'Номер оснащен камином '},
+              ]
+              })
+            
+            div.room-details__description-status-right
+              div.room-details__description-right-title.room-details_title Впечатления от номера
+              
+              div.room-details__description-vote
+                div.room-details__description-vote-left 
+                  div.room-details__description-vote-left-count 260
+                  div.room-details__description-vote-left-vote голосов
+                
+                div.room-details__description-vote-right
+                  ul.room-details__description-vote-right-list
+                    li.room-details__description-vote-right-list-item Великолепно
+                    li.room-details__description-vote-right-list-item Хорошо
+                    li.room-details__description-vote-right-list-item Удовлетворительно
+                    li.room-details__description-vote-right-list-item Разочарован
+
+          div.room-details__commentary
+            div.room-details__commentary-header
+              div.room-details__commentary-title Отзывы посетителей номера
+              div.room-details__commentary-sub-title 2 отзыва
+            
+            div.room-details__commentary-item
+              +commentary(
+              'Мурад Сарафанов',
+              '5 дней назад',
+              'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              './img/man.png')
+
+            div.room-details__commentary-item
+              +commentary(
+              'Патрисия Стёклышкова',
+              'Неделю назад',
+              'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+              './img/image4.png')
+
+          div.room-details__regulations
+            div.room-details__regulations-item
+              +bullet-list({   
+                title:"Правила",
+                list: [
+                "Нельзя с питомцами",
+                "Без вечеринок и мероприятий",
+                "Время прибытия — после 13:00,</br>а выезд до 12:00",
+                ],
+                isRoomDetails:true,
+              })
+
+            div.room-details__regulations-item
+              div.room-details__regulations-cancel
+                div.room-details__regulations-cancel-title Отмена
+                div.room-details__regulations-cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+        div.room-details__description-right
+          +price-room()
+
+      include ../../../components/footer/footer.pug
+
+      script(src = "index.js")
+

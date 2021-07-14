@@ -1,0 +1,93 @@
+//@import '../price-and-number/price-and-number.scss';
+.price-room {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 47px 30px 28px 29px;
+  background:#ffffff url('./img/rectangle2.svg')no-repeat 90px 412px;
+  max-width: 380px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__header-number {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 17px;
+
+    &::after {
+      content: "люкс";
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 15px;
+      color: #bc9cff;
+    }
+
+    &::before {
+      content: "№ ";
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+  }
+  
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+
+  &__text-total {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    margin-top: 6px;
+  }
+
+  &__header-dayPay {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+    align-self: flex-end;
+
+    &::after {
+      content: "в сутки";
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+  }
+
+  &__item {
+    margin-top: 19px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &:nth-child(4){
+      margin-top: 20px;
+    }
+    
+    &:nth-child(5){
+      margin-top: 13px;
+    }
+
+    &:nth-child(6){
+      margin-top: 13px;
+    }
+
+    &:nth-child(8){
+      margin-top: 22px;
+      display: block;
+    }
+    
+  }
+
+}

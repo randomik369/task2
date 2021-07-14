@@ -1,0 +1,39 @@
+.text-list {
+  padding-left: 58px;
+  padding-bottom: 21px;
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
+  &__sub-title {
+    color: rgba(31, 32, 65, 0.75);
+  }
+
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+
+  &::after {
+    content: "";
+    width: 48px;
+    height: 48px;
+    background: url("");
+  }
+
+  &_smile {
+    background: url('./images/insert_emoticon.svg')no-repeat 4px 0px;
+  }
+  
+  &_city {
+    background: url('./images/location_city.svg')no-repeat 4px 0px;
+    margin-top: 23px;
+  }
+  
+  &_comfort {
+    background: url('./images/whatshot.svg')no-repeat 4px 0px;
+    margin-top: 23px;
+  }
+
+}
+
+

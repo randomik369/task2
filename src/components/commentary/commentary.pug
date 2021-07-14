@@ -1,0 +1,13 @@
+mixin commentary(name,date,text,img)
+  section.commentary
+    div.commentary__item
+      div.commentary__header
+        img(class='commentary__img' src=img, alt="avatar")
+        div.commentary__header-text
+          div.commentary__header-name=name
+          div.commentary__header-date=date
+          
+      div.commentary__body
+        include ../like-button/like-button.pug
+        +like-button({likeCount : 12, isClick : true})
+        div.commentary__body-text=text

@@ -1,0 +1,39 @@
+mixin checkbox-list(options={})
+  -
+    const {
+      isList = true,
+      show = '',
+      rotate = '',
+      title = '',
+      items = [
+        {text:'Завтрак',            flag:false},
+        {text:'Письменный стол',    flag:false},
+        {text:'Стул для кормления', flag:true},
+        {text:'Кроватка',           flag:true},
+        {text:'Телевизор',          flag:false},
+        {text:'Шампунь',            flag:false},
+      ]
+    } = options;
+
+    const classModifier = rotate? 'checkbox-list__title-button_rotate':'' 
+
+  if(isList)
+    section.checkbox-list.js-checkbox-list
+      button(class=`checkbox-list__title-button js-checkbox-list__title-button ${classModifier}`)=title
+      ul(class=`checkbox-list__items js-checkbox-list__items ${show && 'checkbox-list__items_show'}`)
+        -for(let {text,flag} of items)
+          li.checkbox-list__item
+            label(class='checkbox-list__item-check')
+              input(type="checkbox" checked=flag class='checkbox-list__item-check-input')
+              span.checkbox-list__item-checkbox
+              div.checkbox-list__item-title!=text
+  else
+    section.checkbox-list
+      div.checkbox-list__title=title
+      ul(class='checkbox-list__items checkbox-list__items_show')
+        -for(let {text,flag} of items)
+          li.checkbox-list__item
+            label(class='checkbox-list__item-check')
+              input(type="checkbox" checked=flag class='checkbox-list__item-check-input')
+              span.checkbox-list__item-checkbox
+              div.checkbox-list__item-title!=text

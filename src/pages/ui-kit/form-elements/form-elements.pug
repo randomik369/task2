@@ -1,0 +1,199 @@
+include ../../../components/input-form/input-form.pug
+include ../../../components/drop-down/drop-down.pug
+include ../../../components/input-masked/input-masked.pug
+include ../../../components/calendar/calendar.pug
+include ../../../components/input-form/input-form.pug
+include ../../../components/drop-down-bed/drop-down-bed.pug
+include ../../../components/checkbox-list/checkbox-list.pug
+include ../../../components/text-list/text-list.pug
+include ../../../components/radio-buttons/radio-buttons.pug
+include ../../../components/toggle/toggle.pug
+include ../../../components/like-button/like-button.pug
+include ../../../components/rate-button/rate-button.pug
+include ../../../components/drop-down/drop-down.pug
+include ../../../components/rich-checkbox-button/rich-checkbox-button.pug
+include ../../../components/range-slider/range-slider.pug
+include ../../../components/buttons/buttons.pug
+include ../../../components/pagination/pagination.pug
+include ../../../components/drop-down/drop-down.pug
+include ../../../components/bullet-list/bullet-list.pug
+include ../../../components/commentary/commentary.pug
+
+
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport' content="initial-scale=1.0, width=device-width")
+    title Toxin Hotel
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png")
+    link(rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5")
+    link(rel="stylesheet" href="./style.css")
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
+  body
+    section.form-elements
+      div.form-elements__row
+        div.form-elements__row-input
+          div.form-elements__row-input-item
+            div.form-elements__row-input-text
+              span.form-elements__row-input-title Text Field
+              span.form-elements__row-input-subTitle Default
+            +input-form()
+          
+          div.form-elements__row-input-item
+            div.form-elements__row-input-text
+              span.form-elements__row-input-title Text Field
+              span.form-elements__row-input-subTitle='нover / focus'
+            +input-form({isActive : true, value : 'This is pretty awesome'})
+          
+          div.form-elements__row-input-item
+            +drop-down({ 
+              title : 'dropdown',
+              list : [
+                "взрослые",
+                "дети",
+                "младенцы",
+              ], 
+            })            
+          
+          div.form-elements__row-input-item
+            +input-masked({})
+            //- +calendar({title:'masked text filed'})
+          
+          div.form-elements__row-input-item
+            +calendar({isDouble:true,title:'date dropdown'})
+          
+          div.form-elements__row-input-item
+            +calendar({isRange:true,title:'filter date dropdown'})
+          
+          
+          div.form-elements__row-input-item
+            div.form-elements__row-input-text
+              span.form-elements__row-input-title subscription text field
+            +input-form({isForm : true})
+          
+          div.form-elements__row-input-item
+            +drop-down-bed({title:'dropdown',subTitle:'default'})
+          
+          div.form-elements__row-input-item
+            +drop-down-bed({isOpen:true,title:'dropdown',subTitle:'expanded'})
+          
+          div.form-elements__row-input-item
+            +checkbox-list({title:'expandable checkbox list'})
+          
+          div.form-elements__row-input-item
+            +checkbox-list({
+              title:'expandable checkbox list',
+              show:true,
+              rotate:true,
+              items : [
+                {text:'Завтрак',flag:false},
+                {text:'Письменный стол',flag:false},
+                {text:'Стул для кормления',flag:true},
+                {text:'Кроватка',flag:true},
+                {text:'Телевизор',flag:false},
+                {text:'Шампунь',flag:false},
+              ]})
+          
+          div.form-elements__row-input-item
+            +comfortList()
+            
+        div.form-elements__row-general
+          div.form-elements__row-double
+            div.form-elements__row-checkbox
+              div.form-elements__row-checkbox-item
+                +checkbox-list({
+                  isList:false,
+                  title:'Checkbox Buttons',
+                  items : [
+                    {text:'Можно курить',flag:false},
+                    {text:'Можно с питомцами',flag:true},
+                    {text:'Можно пригласить гостей</br> (до 10 человек)',flag:true},
+                  ]})
+              
+              div.form-elements__row-checkbox-item
+                +radio-buttons({title : 'Radio Buttons'})
+              
+              div.form-elements__row-checkbox-item
+                div.form-elements__row-checkbox-item-title Toggle
+                +toggle('Получать спецпредложения',true)
+                +toggle('Получать спецпредложения',false)
+              
+              div.form-elements__row-checkbox-item
+                div.form-elements__row-checkbox-item-title like button
+                div.form-elements__row-checkbox-item-like-button
+                  div.form-elements__row-checkbox-item-like-button-left
+                    +like-button({likeCount : 2 })
+                  div.form-elements__row-checkbox-item-like-button-left
+                    +like-button({likeCount:12, isClick:true})
+              
+              div.form-elements__row-checkbox-item
+                div.form-elements__row-checkbox-item-title rate button
+                div.form-elements__row-checkbox-item-rate-button
+                  div.form-elements__row-checkbox-item-rate-button-left
+                    +rate-button({
+                      blockNumber: 0,
+                      checkedStarIndex: 4,
+                    })
+                  div.form-elements__row-checkbox-item-rate-button-right
+                    +rate-button({
+                      blockNumber: 1,
+                      checkedStarIndex: 5,
+                    })
+              
+              div.form-elements__row-checkbox-item
+                +drop-down({
+                  isOpen : true, 
+                  title : 'drop-down',
+                  list : [
+                    "взрослые",
+                    "дети",
+                    "младенцы",
+                  ], 
+                }) 
+              
+              div.form-elements__row-checkbox-item
+                +rich-checkbox-button({title:'RICH CHECKBOX BUTTONS'})               
+            
+            div.form-elements__row-button
+              
+              div.form-elements__row-button-item
+                +range-slider('Range Slider')
+              
+              div.form-elements__row-button-item
+                div.form-elements__row-button-item-title buttons             
+                +buttons({modifier:['background']})
+              
+              div.form-elements__row-button-item             
+                +buttons({modifier:['border']})
+              
+              div.form-elements__row-button-item             
+                +buttons()
+              
+              div.form-elements__row-button-item             
+                +buttons({modifier:['form'],text:'перейти к оплате'})
+              
+              div.form-elements__row-button-item
+                +pagination({title:'pagination'})
+              
+              div.form-elements__row-button-item
+                +drop-down({
+                  isOpen : true,
+                  title : 'dropdown',
+                  list : [
+                    "взрослые",
+                    "дети",
+                    "младенцы",
+                  ], 
+                }) 
+              
+              div.form-elements__row-button-item
+                +bullet-list({title:'bullet list '}) 
+          
+          div.form-elements__row-footer
+            +commentary('Мурад Сарафанов','5 дней назад','Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.','./img/man.png')
+    script(src = "index.js")

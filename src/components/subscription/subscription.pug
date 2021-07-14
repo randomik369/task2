@@ -1,0 +1,13 @@
+include ../input-form/input-form.pug
+
+mixin subscription (options = {})
+  -
+    const {
+      title = '',
+      text = '',
+    } = options;
+
+  section.subscription
+    div.subscription__title=title 
+    div.subscription__text!=text
+    +input-form({isForm:true,isFooter:true})
